@@ -610,6 +610,7 @@ kinematic_constraints::ConstraintEvaluationResult kinematic_constraints::Orienta
   {
     Eigen::Affine3d diff(desired_rotation_matrix_inv_ * state.getGlobalLinkTransform(link_model_).rotation());
     xyz = diff.rotation().eulerAngles(0, 1, 2); // 0,1,2 corresponds to XYZ, the convention used in sampling constraints
+    //std::cout << "X: " << xyz(0) << ", Y:" << xyz(1) << ", Z:" << xyz(2) << std::endl;
   }
 
   xyz(0) = std::min(fabs(xyz(0)), boost::math::constants::pi<double>() - fabs(xyz(0)));

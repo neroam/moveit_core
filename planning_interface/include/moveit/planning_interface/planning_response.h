@@ -56,6 +56,7 @@ struct MotionPlanResponse
 
   robot_trajectory::RobotTrajectoryPtr trajectory_;
   double planning_time_;
+  double trajectory_cost_;
   moveit_msgs::MoveItErrorCodes error_code_;
 };
 

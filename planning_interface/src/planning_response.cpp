@@ -41,6 +41,7 @@ void planning_interface::MotionPlanResponse::getMessage(moveit_msgs::MotionPlanR
 {
   msg.error_code = error_code_;
   msg.planning_time = planning_time_;
+  msg.trajectory_cost = trajectory_cost_;
   if (trajectory_ && !trajectory_->empty())
   {
     robot_state::robotStateToRobotStateMsg(trajectory_->getFirstWayPoint(), msg.trajectory_start);
